@@ -22,12 +22,10 @@ public class PortfolioController : ControllerBase
     [HttpGet]
     public async Task<ActionResult<PortfolioResponse>> Get()
     {
-        // 1) Traemos transacciones (lo mínimo)
         var trans = await _db.Transactions
             .Select(t => new { t.CryptoCode, t.Action, t.CryptoAmount })
             .ToListAsync();
 
-        // 2) Holdings en memoria (C#)
         var holdings = trans
             .GroupBy(t => t.CryptoCode)
             .Select(g => new
@@ -38,7 +36,6 @@ public class PortfolioController : ControllerBase
             .Where(x => x.Holding > 0)
             .ToList();
 
-        // 3) Valuación con CriptoYa
         const string exchange = "binance";
 
         var resp = new PortfolioResponse();

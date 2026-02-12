@@ -34,7 +34,6 @@ var app = builder.Build();
 app.UseCors("AllowVue");
 
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

@@ -24,8 +24,7 @@ namespace CryptoWallet.Api.Controllers
             _cryptoYa = cryptoYa;
             _holdings = holdings;
         }
-
-        //GET / transactions    
+  
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
@@ -36,7 +35,6 @@ namespace CryptoWallet.Api.Controllers
             return Ok(list);
         }
 
-        //GET /transactions/{id}
         [HttpGet("{id:int}")]
         public async Task<IActionResult> GetById(int id)
         {
@@ -48,7 +46,6 @@ namespace CryptoWallet.Api.Controllers
             return Ok(trans);
         }
 
-        //POST /transactions
         [HttpPost]
         public async Task<IActionResult> Create(CreateTransactionRequest req)
         {
@@ -113,7 +110,6 @@ namespace CryptoWallet.Api.Controllers
         }
         
 
-        //DELETE /transactions/{id}
         [HttpDelete("{id:int}")]
         public async Task<IActionResult> Delete(int id)
         {
