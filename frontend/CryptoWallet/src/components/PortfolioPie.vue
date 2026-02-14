@@ -9,8 +9,8 @@ import { onBeforeUnmount, onMounted, ref, watch } from "vue";
 import { Chart } from "chart.js/auto";
 
 const props = defineProps({
-  labels: { type: Array, default: () => [] },   // ["BTC", "ETH", ...]
-  values: { type: Array, default: () => [] },   // [moneyARS, moneyARS, ...]
+  labels: { type: Array, default: () => [] },   
+  values: { type: Array, default: () => [] },  
 });
 
 const canvas = ref(null);
@@ -19,14 +19,14 @@ let chartInstance = null;
 function renderChart() {
   if (!canvas.value) return;
 
-  // Si ya existe, lo destruimos y lo recreamos (simple y seguro)
+ 
   if (chartInstance) {
     chartInstance.destroy();
     chartInstance = null;
   }
 
   chartInstance = new Chart(canvas.value, {
-    type: "doughnut", // o "pie"
+    type: "doughnut",
     data: {
       labels: props.labels,
       datasets: [
@@ -52,7 +52,7 @@ function renderChart() {
           },
         },
       },
-      cutout: "55%", // hace que se vea “doughnut”
+      cutout: "55%", 
     },
   });
 }

@@ -1,17 +1,14 @@
 <template>
   <div class="space-y-6">
-    <!-- Título -->
+
     <h1 class="text-2xl font-semibold">Transacciones</h1>
 
-    <!-- Grid responsive -->
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
       
-      <!-- COLUMNA IZQUIERDA: FORM -->
       <section class="lg:col-span-1 rounded-2xl border border-slate-800 bg-slate-900/40 p-4 shadow">
         <h2 class="text-lg font-semibold mb-4">Nueva Transacción</h2>
 
         <div class="space-y-3">
-          <!-- Crypto -->
           <div>
             <label class="text-sm text-slate-400">Crypto</label>
             <select
@@ -24,7 +21,6 @@
             </select>
           </div>
 
-          <!-- Acción -->
           <div>
             <label class="text-sm text-slate-400">Acción</label>
             <select
@@ -35,8 +31,7 @@
               <option value="sale">Venta</option>
             </select>
           </div>
-
-          <!-- Cantidad -->
+>
           <div>
             <label class="text-sm text-slate-400">Cantidad</label>
             <input
@@ -55,7 +50,6 @@
             </p>
           </div>
 
-          <!-- Precio -->
           <div class="text-sm">
             <span v-if="loadingPrice" class="text-slate-400">Cargando precio…</span>
 
@@ -72,7 +66,6 @@
             </span>
           </div>
 
-          <!-- Botón -->
           <button
             @click="onCreate"
             :disabled="loading || (form.cryptoCode === 'usdc' && form.cryptoAmount < minAmount)"
@@ -81,13 +74,11 @@
             {{ loading ? 'Creando…' : 'Crear Transacción' }}
           </button>
 
-          <!-- Mensajes -->
           <p v-if="msg" class="text-sm text-emerald-400">{{ msg }}</p>
           <p v-if="err" class="text-sm text-red-400">{{ err }}</p>
         </div>
       </section>
 
-      <!-- COLUMNA DERECHA: HISTORIAL -->
       <section class="lg:col-span-2 rounded-2xl border border-slate-800 bg-slate-900/40 p-4 shadow">
         <div class="flex items-center justify-between mb-3">
           <h2 class="text-lg font-semibold">Historial</h2>
@@ -143,7 +134,6 @@
           No hay transacciones
         </p>
 
-        <!-- Mostrar más / menos -->
         <div class="mt-3 flex gap-2">
           <button
             v-if="!showAll && txs.length > 5"
