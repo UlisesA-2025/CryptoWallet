@@ -11,13 +11,6 @@ export function createTransaction(payload) {
     });
 }
 
-export function pathTransaction(id, payload) {
-    return apiFetch(`/transactions/${id}`, {
-        method: "PATCH",
-        body: JSON.stringify(payload),
-    });
-}
-
 export function deleteTransaction(id) {
     return apiFetch(`/transactions/${id}`, {
         method: "DELETE",
