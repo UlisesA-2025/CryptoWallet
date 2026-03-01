@@ -13,7 +13,7 @@
             <label class="text-sm text-slate-400">Crypto</label>
             <select
               v-model="form.cryptoCode"
-              class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500/40"
+              class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2  focus:ring-2 focus:ring-blue-500/40"
             >
               <option v-for="c in cryptos" :key="c.code" :value="c.code">
                 {{ c.label }}
@@ -31,14 +31,13 @@
               <option value="sale">Venta</option>
             </select>
           </div>
->
           <div>
             <label class="text-sm text-slate-400">Cantidad</label>
             <input
               v-model.number="form.cryptoAmount"
               type="number"
               :min="minAmount"
-              :step="form.cryptoCode === 'usdc' ? 1 : 0.00000001"
+              :step="form.cryptoCode === 'usdc' ? 10 : 0.00000001"
               class="mt-1 w-full rounded-lg bg-slate-950 border border-slate-800 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500/40"
             />
 

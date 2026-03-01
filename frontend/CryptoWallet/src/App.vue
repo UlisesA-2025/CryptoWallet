@@ -39,7 +39,7 @@
 
     <footer class="border-t border-slate-800 mt-10">
       <div class="mx-auto max-w-5xl px-4 py-4 text-xs text-slate-500">
-        CryptoWallet • Vue 3 + ASP.NET + SQLite • UI Tailwind
+        CryptoWallet • Vue 3 + ASP.NET + SQLite • 
       </div>
     </footer>
   </div>

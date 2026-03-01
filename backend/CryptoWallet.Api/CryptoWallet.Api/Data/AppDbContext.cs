@@ -19,7 +19,6 @@ namespace CryptoWallet.Api.Data
                 e.Property(x => x.CryptoCode).IsRequired();
                 e.Property(x => x.Action).IsRequired();
 
-                // SQLite guarda decimales como REAL
                 e.Property(x => x.CryptoAmount).HasColumnType("REAL");
                 e.Property(x => x.Money).HasColumnType("REAL");
 
