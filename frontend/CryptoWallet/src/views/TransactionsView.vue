@@ -296,7 +296,7 @@
         loadingPrice.value = true;
         try {
             const res = await getArsPrice(ex, form.cryptoCode);
-            unitPrice.value = Number(res.arsPrice); // aseguramos número
+            unitPrice.value = Number(res.arsPrice); 
         } catch (e) {
             console.error("Error al obtener precio:", e);
             unitPrice.value = null;

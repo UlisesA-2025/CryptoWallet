@@ -11,7 +11,6 @@ export function createTransaction(payload) {
     });
 }
 
-
 export function deleteTransaction(id) {
     return apiFetch(`/transactions/${id}`, {
         method: "DELETE",
