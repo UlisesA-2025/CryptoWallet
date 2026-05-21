@@ -1,1 +1,1 @@
-Plataforma web inspirada en aplicaciones de delivery, desarrollada con NestJS, Vue.js y PostgreSQL. Incluye autenticación JWT, gestión de usuarios con roles (cliente, vendedor y repartidor), administración de productos, carrito de compras, generación de pedidos y asignación de repartidores mediante una arquitectura modular y APIs REST.
+
